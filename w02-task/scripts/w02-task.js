@@ -30,8 +30,23 @@ imageElement.setAttribute('alt', `Profile image of ${nameElement}`);
 
 /* Step 5 - Array */
 
+let favoriteFood = ['Shrimp Boil', 'Chicken', 'Pepperoni Pizza'];
 
+document.getElementById("food").innerHTML = favoriteFood;
 
+const newFood = favoriteFood + newFood;
 
+favoriteFood.push("Carbs");
+
+foodElement.innerHTML += `<br>${favoriteFood}`;
+
+favoriteFood.shift();
+
+// favoriteFood.log(favoriteFood).innerHTML += `<br>${favoriteFood}`;
+favoriteFood.innerHTML += `<br>${favoriteFood}`;
+
+favoriteFood.pop();
+
+favoriteFood.innerHTML += `<br>${favoriteFood}`;
 
 
