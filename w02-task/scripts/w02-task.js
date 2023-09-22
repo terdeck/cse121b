@@ -15,7 +15,9 @@ let profilePicture = "images/td_headshot.jpg";
 const nameElement = document.getElementById("name");
 const foodElement = document.getElementById("food");
 const yearElement = document.querySelector("#year");
-const imageElement = document.getElementsByName("image")
+
+// const imageElement = document.getElementsByName(profilePicture);
+const imageElement = document.getElementById("img");
 
 
 
@@ -27,12 +29,6 @@ currentYear.textContent = "2023";
 
 imageElement.setAttribute('src', profilePicture);
 imageElement.setAttribute('alt', `Profile image of ${nameElement}`);
-
-// const currentYear = 2023; // Replace with the actual value of your variable
-// const yearElement = document.getElementById('year'); // Get the element by its id
-
-// // Set the text content of the element to the value of the variable
-// yearElement.textContent = currentYear;
 
 
 /* Step 5 - Array */
