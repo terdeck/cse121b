@@ -10,7 +10,7 @@ function addNumbers() {
     let addNumber1 = Number(document.querySelector('#add1').value);
     let addNumber2 = Number(document.querySelector('#add2').value);
     document.querySelector('#sum').value = add(addNumber1, addNumber2);
-    document.querySelector('#addNumbers').addEventListener("click", addNumbers);
+    document.querySelector('#addNumbers').addEventListener('click', addNumbers);
 }
 
 /* Function Expression - Subtract Numbers */
@@ -29,7 +29,7 @@ function subtractNumbers() {
 // function multipy(factor1, factor2) {
 //     return factor1 * factor2;
 // }
-const multiply = (factor1, factor2) => factor1 * factor2;
+multiply = (factor1, factor2) => factor1 * factor2;
 // const func = (x) => x * x;
 
 // function multiplyNumbers() {
@@ -38,7 +38,7 @@ const multiply = (factor1, factor2) => factor1 * factor2;
 //     document.querySelector('#product').value = multipy(factor1, factor2);
 //     document.querySelector('#multiplyNumbers').addEventListener("click", multiplyNumbers);
 // }
-const multiplyNumbers = () => document.querySelector('#product').value = multipy(factor1, factor2) =
+multiplyNumbers = () => document.querySelector('#product').value = multipy(factor1, factor2) =
     Number(document.querySelector('#factor1').value) * Number(document.querySelector('#factor2').value);
     document.querySelector('#multiplyNumbers').addEventListener("click", multiplyNumbers);
 
