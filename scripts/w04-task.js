@@ -30,11 +30,12 @@ myProfile.placesLived.push({
 /* Name */
 document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
-let img = document.createElement("img");
-img.setAttribute("src", myProfile.photo);
-img.setAttribute("alt", "photo");
-document.querySelector("#photo").appendChild(img);
-// document.querySelector("#photo").innerHTML = myProfile.photo.setAttribute("src", "images/td_headshot.jpg");
+// let img = document.getElementById('photo');
+// img.setAttribute("src", myProfile.photo);
+// img.setAttribute("alt", "photo");
+document.getElementById('photo').setAttribute("src", myProfile.photo);
+document.getElementById('photo').setAttribute("alt", myProfile.name);
+// document.querySelector("#photo").innerHTML = myProfile.photo.setAttribute("src", myProfile.photo);
 // document.querySelector("#photo").innerHTML = myProfile.name.setAttribute("alt", "photo");
 
 /* Favorite Foods List*/
@@ -56,7 +57,7 @@ myProfile.placesLived.forEach(place => {
     let dl = document.createElement("dl");
     let dt = document.createElement("dt");
     dt.textContent = place.place;
-    // dt.innerHTML = `<strong> ${place.place}`;
+    // dt.innerHTML = `<strong> ${place.place} </strong>`;
     let dd = document.createElement("dd");
     dd.textContent = place.length;
     // document.querySelector("#places-lived").appendChild(dt);
