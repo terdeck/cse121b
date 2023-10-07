@@ -32,7 +32,6 @@ document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
 let img = document.createElement("img");
 img.setAttribute("src", myProfile.photo);
-// img.setAttribute("src", "https://github.com/terdeck/cse121b/blob/master/images/td_headshot.jpg");
 img.setAttribute("alt", "photo");
 document.querySelector("#photo").appendChild(img);
 // document.querySelector("#photo").innerHTML = myProfile.photo.setAttribute("src", "images/td_headshot.jpg");
