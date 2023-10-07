@@ -6,8 +6,7 @@
 //     self: ""}
 let myProfile = {
     name: "Tara Decker",
-    // photo: "images/td_headshot.jpg",
-    photo: "https://unsplash.com/photos/2Wv9VnwzeeI",
+    photo: "images/td_headshot.jpg",
     favoriteFoods: ["Shrimp Boil", " Chicken", " Pepperoni Pizza"],
     hobbies: ["Perler Bead Art", "Music", "Crochet"],
     placesLived: [],
@@ -33,7 +32,8 @@ document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
 let img = document.createElement("img");
 img.setAttribute("src", myProfile.photo);
-img.setAttribute("alt", "Tara Decker headshot");
+// img.setAttribute("src", "https://github.com/terdeck/cse121b/blob/master/images/td_headshot.jpg");
+img.setAttribute("alt", "photo");
 document.querySelector("#photo").appendChild(img);
 // document.querySelector("#photo").innerHTML = myProfile.photo.setAttribute("src", "images/td_headshot.jpg");
 // document.querySelector("#photo").innerHTML = myProfile.name.setAttribute("alt", "photo");
