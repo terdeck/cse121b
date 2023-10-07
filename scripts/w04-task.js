@@ -6,7 +6,8 @@
 //     self: ""}
 let myProfile = {
     name: "Tara Decker",
-    photo: "images/td_headshot.jpg",
+    // photo: "images/td_headshot.jpg",
+    photo: "https://unsplash.com/photos/2Wv9VnwzeeI",
     favoriteFoods: ["Shrimp Boil", " Chicken", " Pepperoni Pizza"],
     hobbies: ["Perler Bead Art", "Music", "Crochet"],
     placesLived: [],
@@ -15,8 +16,13 @@ let myProfile = {
 /* Populate Profile Object with placesLive objects */
 
 myProfile.placesLived.push({
-    place: ["South Carolina", "Utah"],
-    length: ["4 years", "Too Long"],
+    place: "South Carolina",
+    length: "4 years"
+})
+
+myProfile.placesLived.push({
+    place: "Utah",
+    length: "Too Long"
 })
 // I don't feel comfortable listing every place I've lived on the internet. Sorrynotsorry.
 
@@ -27,7 +33,7 @@ document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
 let img = document.createElement("img");
 img.setAttribute("src", myProfile.photo);
-img.setAttribute("alt", "photo");
+img.setAttribute("alt", "Tara Decker headshot");
 document.querySelector("#photo").appendChild(img);
 // document.querySelector("#photo").innerHTML = myProfile.photo.setAttribute("src", "images/td_headshot.jpg");
 // document.querySelector("#photo").innerHTML = myProfile.name.setAttribute("alt", "photo");
@@ -50,7 +56,8 @@ myProfile.hobbies.forEach(hobby => {
 myProfile.placesLived.forEach(place => {
     let dl = document.createElement("dl");
     let dt = document.createElement("dt");
-    dt.textContent = place.place;
+    // dt.textContent = place.place;
+    dt.innerHTML = `<strong> ${place.place}`;
     let dd = document.createElement("dd");
     dd.textContent = place.length;
     // document.querySelector("#places-lived").appendChild(dt);
