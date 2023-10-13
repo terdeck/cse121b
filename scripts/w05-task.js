@@ -62,18 +62,11 @@ function sortyBy(temples) {
             displayTemples(temples);
             break;
     }
+    return reset
 }
-// switch(expression) {
-//     case x:
-//       // code block
-//       break;
-//     case y:
-//       // code block
-//       break;
-//     default:
-//       // code block
-//   }
 
 getTemples();
 
 /* Event Listener */
+
+document.querySelector("#sortBy").addEventListener("change", () => {sortyBy(templeList) });
