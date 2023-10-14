@@ -23,8 +23,8 @@ const displayTemples = (temples) => {
             templeName.textContent = temples.templeName; 
             const imageElement = document.createElement("img");
             // added 's' to temple to see if that was causing issue for setAttributes
-            imageElement.setAttribute("src", temples.imageUrl);
-            imageElement.setAttribute("alt", temples.location);
+            imageElement.setAttribute("src", temple.imageUrl);
+            imageElement.setAttribute("alt", temple.location);
             templeArticle.appendChild(templeName);
             templeArticle.appendChild(imageElement);
             templesElement.appendChild(templeArticle); 
