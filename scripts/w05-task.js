@@ -14,13 +14,15 @@ const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
-    templeList.forEach((currentItem) => {
-        const templeArticle = document.createElement("article");
-        const templeNames = document.createElement(<h3>`${templeName}`</h3>).appendChild(article);
-        const imageElement = document.createElement(<img >`${url}`</img>).appendChild(article);
-        imageElement.setAttribute("src", imageUrl);
-        imageElement.setAttribute("alt", location);
-        templesElement.appendChild(article); 
+    // templeList.forEach((temple) => {
+        temples.forEach((temple) => {
+            const templeArticle = document.createElement("article");
+            const templeName = document.createElement("h3");
+            const imageElement = document.createElement("img");            imageElement.setAttribute("src", temple.imageUrl);
+            imageElement.setAttribute("alt", temple.location);
+            templeArticle.appendChild(templeName);
+            templeArticle.appendChild(imageElement);
+            templesElement.appendChild(templeArticle); 
     });
 }
 
@@ -39,7 +41,7 @@ const getTemples = async () => {
 /* reset Function */ 
 // Declare a function expression named reset that clears all of the <article> elements from the templesElement.
 function reset() {
-    document.getElementById("article").reset();
+    document.getElementById("article").reset(templesElement);
 }
 
 /* sortBy Function */
@@ -50,13 +52,13 @@ function sortyBy(temples) {
     const filter = document.getElementById("#sortyBy").innerHTML;
     switch (filter) {
         case "utah":
-           displayTemples(temples) = location === "Utah";
+           displayTemples((temples) => temples.location === "Utah");
             break;
         case "nonutah":
-            displayTemples(temples) = location -= "Utah";
+            displayTemples((temples) => temples.location !== "Utah");
             break;
         case "older":
-            displayTemples(temples) = dedicated <= 1950;
+            displayTemples((temples) => temples.dedicated <= 1950);
             break;
         case "all":
             displayTemples(temples);
