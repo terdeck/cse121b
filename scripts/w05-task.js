@@ -10,16 +10,21 @@
 /* Declare and initialize global variables */
 const templesElement = document.getElementById("templeData");
 const templeList = [];
-const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json";
+// const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json";
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
     // templeList.forEach((temple) => {
+        templesElement.innerHTML = "";
         temples.forEach((temple) => {
             const templeArticle = document.createElement("article");
             const templeName = document.createElement("h3");
-            const imageElement = document.createElement("img");            imageElement.setAttribute("src", temple.imageUrl);
-            imageElement.setAttribute("alt", temple.location);
+            // the templeName line yay or nay???
+            templeName.textContent = temples.templeName; 
+            const imageElement = document.createElement("img");
+            // added 's' to temple to see if that was causing issue for setAttributes
+            imageElement.setAttribute("src", temples.imageUrl);
+            imageElement.setAttribute("alt", temples.location);
             templeArticle.appendChild(templeName);
             templeArticle.appendChild(imageElement);
             templesElement.appendChild(templeArticle); 
@@ -30,11 +35,12 @@ const displayTemples = (temples) => {
 /* async getTemples Function using fetch()*/
 // async function getTemples() => {}
 const getTemples = async () => {
-    const response = await fetch(url);
+    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     if (response.ok) {
-        const templeList = await response.json();
-        displayTemples(templeList);
-        console.log(templeList);
+        // changed to templesList - added 's' - in case mix up with array called templeList up top 
+        const templesList = await response.json();
+        displayTemples(templesList);
+        console.log(templesList);
     }
 }
 
@@ -46,19 +52,20 @@ function reset() {
 
 /* sortBy Function */
 function sortyBy(temples) {
-    function reset() {
-        return reset;
-    }
-    const filter = document.getElementById("#sortyBy").innerHTML;
+    reset();
+    const filter = document.getElementById("sortyBy").value;
     switch (filter) {
         case "utah":
-           displayTemples((temples) => temples.location === "Utah");
+        //    displayTemples((temples) => temples.location === "Utah");
+        displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
             break;
-        case "nonutah":
-            displayTemples((temples) => temples.location !== "Utah");
+        case "notutah":
+            // displayTemples((temples) => temples.location !== "Utah");
+            displayTemples(temples.filter((temple) => !temple.location.includes("Utah")));
             break;
         case "older":
-            displayTemples((temples) => temples.dedicated <= 1950);
+            // displayTemples((temples) => temples.dedicated <= 1950);
+            displayTemples(temples.filter((temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)));
             break;
         case "all":
             displayTemples(temples);
@@ -67,8 +74,8 @@ function sortyBy(temples) {
     return reset
 }
 
-getTemples();
-
 /* Event Listener */
 
 document.querySelector("#sortBy").addEventListener("change", () => {sortyBy(templeList) });
+
+getTemples();
