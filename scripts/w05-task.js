@@ -14,15 +14,13 @@ const templeList = [];
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
-    // templeList.forEach((temple) => {
         templesElement.innerHTML = "";
-        temples.forEach((temples) => {
+        temples.forEach((temple) => {
             const templeArticle = document.createElement("article");
             const templeName = document.createElement("h3");
             // the templeName line yay or nay???
-            templeName.textContent = temples.templeName; 
+            templeName.textContent = temple.templeName; 
             const imageElement = document.createElement("img");
-            // added 's' to temple to see if that was causing issue for setAttributes
             imageElement.setAttribute("src", temple.imageUrl);
             imageElement.setAttribute("alt", temple.location);
             templeArticle.appendChild(templeName);
@@ -37,17 +35,19 @@ const displayTemples = (temples) => {
 const getTemples = async () => {
     const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     if (response.ok) {
+        // templeList.length = 0;
         // changed to templesList - added 's' - in case mix up with array called templeList up top 
-        const templesList = await response.json();
-        displayTemples(templesList);
-        console.log(templesList);
+        const templeList = await response.json();
+        displayTemples(templeList);
+        console.log(templeList);
     }
 }
 
 /* reset Function */ 
 // Declare a function expression named reset that clears all of the <article> elements from the templesElement.
 function reset() {
-    document.getElementById("article").reset(templesElement);
+    // document.getElementById("article").reset(templesElement);
+    templesElement.innerHTML = "";
 }
 
 /* sortBy Function */
