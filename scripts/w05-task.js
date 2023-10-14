@@ -10,7 +10,6 @@
 /* Declare and initialize global variables */
 const templesElement = document.getElementById("templeData");
 const templeList = [];
-// const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json";
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
@@ -18,7 +17,6 @@ const displayTemples = (temples) => {
         temples.forEach((temple) => {
             const templeArticle = document.createElement("article");
             const templeName = document.createElement("h3");
-            // the templeName line yay or nay???
             templeName.textContent = temple.templeName; 
             const imageElement = document.createElement("img");
             imageElement.setAttribute("src", temple.imageUrl);
@@ -35,9 +33,10 @@ const displayTemples = (temples) => {
 const getTemples = async () => {
     const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     if (response.ok) {
-        // templeList.length = 0;
         // changed to templesList - added 's' - in case mix up with array called templeList up top 
-        const templeList = await response.json();
+        const templesList = await response.json();
+        templeList.length = 0;
+        templeList.push(...templesList);
         displayTemples(templeList);
         console.log(templeList);
     }
@@ -51,13 +50,13 @@ function reset() {
 }
 
 /* sortBy Function */
-function sortyBy(temples) {
+function sortBy(temples) {
     reset();
-    const filter = document.getElementById("sortyBy").value;
+    const filter = document.getElementById("sortBy").value;
     switch (filter) {
         case "utah":
         //    displayTemples((temples) => temples.location === "Utah");
-        displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
+            displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
             break;
         case "notutah":
             // displayTemples((temples) => temples.location !== "Utah");
@@ -70,12 +69,11 @@ function sortyBy(temples) {
         case "all":
             displayTemples(temples);
             break;
-    }
-    return reset
+    };
 }
 
 /* Event Listener */
 
-document.querySelector("#sortBy").addEventListener("change", () => {sortyBy(templeList) });
+document.querySelector("#sortBy").addEventListener("change", () => {sortBy(templeList) });
 
 getTemples();
