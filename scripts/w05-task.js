@@ -16,7 +16,7 @@ const templeList = [];
 const displayTemples = (temples) => {
     // templeList.forEach((temple) => {
         templesElement.innerHTML = "";
-        temples.forEach((temple) => {
+        temples.forEach((temples) => {
             const templeArticle = document.createElement("article");
             const templeName = document.createElement("h3");
             // the templeName line yay or nay???
