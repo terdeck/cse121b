@@ -8,7 +8,7 @@
 //   },
 
 /* Declare and initialize global variables */
-const templesElement = document.getElementById("templeData");
+const templesElement = document.getElementById("temples");
 const templeList = [];
 
 /* async displayTemples Function */
@@ -74,6 +74,6 @@ function sortBy(temples) {
 
 /* Event Listener */
 
-document.querySelector("#sortBy").addEventListener("change", () => {sortBy(templeList) });
+document.querySelector("#sortBy").addEventListener("change", () => { sortBy(templeList) });
 
 getTemples();
