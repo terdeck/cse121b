@@ -283,11 +283,6 @@ footer {
 
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@800&family=Manrope&display=swap');
 
-/* #final-grid {
-    display: grid;
-    grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;  /* 5 columns */
-    /* grid-template-rows: 1fr 1fr 1fr 1fr; /* 4 rows */
-/*} */ 
 #ron-image {
     width: 250px;
     height: auto;
@@ -295,12 +290,6 @@ footer {
     margin: .5rem;
     /* grid-area: 2/2/3/3; */
 }
-/* #quotes {
-    width: 250px;
-    height: auto;
-    margin: .5rem;
-    /* grid-area: 2/3/3/4; */
-/*} */
 
 .quote-box{ 
     padding:3rem; 
