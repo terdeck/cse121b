@@ -70,7 +70,7 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
-#gridly h1 {
+#gridly h1 #final-grid {
     margin-top: 80px;
 }
 
@@ -199,7 +199,7 @@ footer {
 
 /* ID Selectors */
 
-#home {
+#home #final{
     margin-top: 125px;
     display: grid;
     grid-template-columns: 1fr;
@@ -278,6 +278,43 @@ footer {
     box-shadow: 0 0 30px #777;
     margin: .5rem;
 }
+
+/* final project CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@800&family=Manrope&display=swap');
+
+/* #final-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;  /* 5 columns */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; /* 4 rows */
+/*} */ 
+#ron-image {
+    width: 250px;
+    height: auto;
+    box-shadow: 0 0 30px #777;
+    margin: .5rem;
+    /* grid-area: 2/2/3/3; */
+}
+/* #quotes {
+    width: 250px;
+    height: auto;
+    margin: .5rem;
+    /* grid-area: 2/3/3/4; */
+/*} */
+
+.quote-box{ 
+    padding:3rem; 
+    border:#111;
+  } 
+    
+  .text{ 
+    font-size:30px; 
+    padding-left:10px; 
+    transition: 0.5s; 
+    transition-timing-function: ease-in; 
+    font-family: 'Almarai', sans-serif; 
+    color: transparent; 
+  } 
 
 /* Media Queries */
 @media only screen and (min-width: 32.5em) {
