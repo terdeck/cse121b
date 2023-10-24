@@ -1,4 +1,5 @@
 /* Universal Selector */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@800&family=Manrope&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -70,7 +71,7 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
-#gridly h1 #final-grid {
+#gridly h1 {
     margin-top: 80px;
 }
 
@@ -199,7 +200,7 @@ footer {
 
 /* ID Selectors */
 
-#home #final{
+#home {
     margin-top: 125px;
     display: grid;
     grid-template-columns: 1fr;
@@ -281,8 +282,6 @@ footer {
 
 /* final project CSS */
 
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@800&family=Manrope&display=swap');
-
 #ron-image {
     width: 250px;
     height: auto;
@@ -290,20 +289,6 @@ footer {
     margin: .5rem;
     /* grid-area: 2/2/3/3; */
 }
-
-.quote-box{ 
-    padding:3rem; 
-    border:#111;
-  } 
-    
-  .text{ 
-    font-size:30px; 
-    padding-left:10px; 
-    transition: 0.5s; 
-    transition-timing-function: ease-in; 
-    font-family: 'Almarai', sans-serif; 
-    color: transparent; 
-  } 
 
 /* Media Queries */
 @media only screen and (min-width: 32.5em) {
