@@ -17,4 +17,3 @@ async function getQuotes() {
 }
 
 document.querySelector("button").addEventListener("click", getQuotes);
-// document.querySelector("chooseQuote").addEventListener("change", getQuotes);
